@@ -9,14 +9,14 @@ function Section({
 	backgroundImg,
 }) {
 	return (
-		<Wrap bgImage={backgroundImg}>
+		<Wrap bgImg={backgroundImg}>
 			<ItemText>
 				<h1> {title} </h1> <p> {description} </p>
 			</ItemText>
 			<BtnContainer>
 				<BtnGroup>
-					<LeftBtn> {leftBtnTxt} </LeftBtn>
-					<RightBtn> {rightBtnTxt} </RightBtn>
+					<LeftBtn blackBtn={rightBtnTxt}> {leftBtnTxt} </LeftBtn>
+					{rightBtnTxt && <RightBtn> {rightBtnTxt} </RightBtn>}
 				</BtnGroup>
 				<DownArrow src='/images/down-arrow.svg' />
 			</BtnContainer>
@@ -32,11 +32,11 @@ const Wrap = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url(/images/model-s.jpg);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	background-image: ${(props) => `url("images/${props.bgImg}")`};
 `;
 
 const ItemText = styled.div`
@@ -53,7 +53,8 @@ const BtnGroup = styled.div`
 `;
 
 const LeftBtn = styled.div`
-	background-color: rgba(23, 26, 32, 0.8);
+	background-color: ${(props) =>
+		props.blackBtn ? 'rgba(23, 26, 32, 0.8)' : 'black'};
 	height: 45px;
 	width: 280px;
 	color: white;
