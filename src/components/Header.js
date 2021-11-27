@@ -80,6 +80,6 @@ const RightMenu = styled.div`
 `;
 
 const CustomMenu = styled(MenuIcon)`
-	margin-left: 10px;
+	margin-left: 12px;
 	cursor: pointer;
 `;
