@@ -6,7 +6,7 @@ import CloseIcon from '@material-ui/icons/Close';
 function Header() {
 	const [modal, setModal] = useState(false);
 
-	function modalTrigger() = {
+	function modalTrigger() => {
 		
 	}
 
