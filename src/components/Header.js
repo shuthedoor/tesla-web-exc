@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState } from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 
 function Header() {
+	const [modal, setModal] = useState(false);
+
+	function modalTrigger() = {
+		
+	}
+
 	return (
 		<Container>
 			<a href='/'>
