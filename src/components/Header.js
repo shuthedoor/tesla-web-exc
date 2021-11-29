@@ -1,14 +1,10 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 
 function Header() {
-	const [modal, setModal] = useState(false);
-
-	function modalTrigger() => {
-		
-	}
+	const [modalMenu, setModalMenu] = useState(false);
 
 	return (
 		<Container>
@@ -30,7 +26,7 @@ function Header() {
 				<a href='/'>Account</a>
 				<CustomMenu />
 			</RightMenu>
-			<BurgerMenu>
+			<BurgerMenu show={modalMenu}>
 				<CustomClose />
 				<li>
 					<a href='/'>Existing Inventory</a>
