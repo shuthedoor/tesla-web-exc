@@ -24,7 +24,7 @@ function Header() {
 			<RightMenu>
 				<a href='/'>Shop</a>
 				<a href='/'>Account</a>
-				<CustomMenu />
+				<CustomMenu onClick={() => setModalMenu(true)} />
 			</RightMenu>
 			<BurgerMenu show={modalMenu}>
 				<CustomClose />
@@ -147,8 +147,8 @@ const BurgerMenu = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: start;
-
-	li {
+	transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(100%)')}
+		li {
 		font-size: 14.5px;
 		padding: 15px 0;
 	}
